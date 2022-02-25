@@ -1,4 +1,8 @@
 # JSON Web Token library for PHP
+### Installation:
+```
+composer require anshu-krishna/php-jwt
+```
 - Generate JWT
 - Verify JWT
 - Supported Std Claims:
