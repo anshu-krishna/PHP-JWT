@@ -1,0 +1,17 @@
+# JSON Web Token library for PHP
+- Generate JWT
+- Verify JWT
+- Supported Std Claims:
+	- 'iss'
+	- 'aud'
+	- 'exp'
+	- 'nbf'
+	- 'iat'
+- Supported Signature Algorithms:
+	- HS256
+	- HS384
+	- HS512
+	- RS256
+	- RS384
+	- RS512
+	- None (This is not secure. USE WITH CAUTION)
