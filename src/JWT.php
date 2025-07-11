@@ -4,7 +4,7 @@ use Krishna\DataValidator\Returner;
 use Krishna\Utilities\Base64;
 use Traversable;
 
-class JWT implements \ArrayAccess, \IteratorAggregate  {
+class JWT implements \ArrayAccess, \IteratorAggregate, \JsonSerializable  {
 	private ?string
 		$enc = null,
 		$sig = null;
@@ -33,6 +33,13 @@ class JWT implements \ArrayAccess, \IteratorAggregate  {
 	/* Debug */
 	public function __debugInfo() {
 		return ['enc' => $this->enc, 'sig' => $this->sig, 'head' => $this->head, 'body' => $this->body];
+	}
+	/* JsonSerializable */
+	public function jsonSerialize(): array {
+		return [
+			'head' => $this->head,
+			'body' => $this->body
+		];
 	}
 	/* IteratorAggregate */
 	public function getIterator(): \Traversable {
